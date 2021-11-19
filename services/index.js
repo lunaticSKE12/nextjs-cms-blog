@@ -28,6 +28,7 @@ export const getPosts = async () => {
               name
               slug
             }
+            minRead
           }
         }
       }
@@ -79,6 +80,7 @@ export const getPostDetails = async (slug) => {
           name
           slug
         }
+        minRead
       }
     }
   `;
@@ -104,6 +106,7 @@ export const getSimilarPosts = async (categories, slug) => {
         }
         createdAt
         slug
+        minRead
       }
     }
   `;
@@ -126,6 +129,7 @@ export const getAdjacentPosts = async (createdAt, slug) => {
         }
         createdAt
         slug
+        minRead
       }
       previous: posts(
         first: 1
@@ -138,6 +142,7 @@ export const getAdjacentPosts = async (createdAt, slug) => {
         }
         createdAt
         slug
+        minRead
       }
     }
   `;
@@ -173,6 +178,7 @@ export const getCategoryPost = async (slug) => {
               name
               slug
             }
+            minRead
           }
         }
       }
@@ -200,6 +206,7 @@ export const getFeaturedPosts = async () => {
         title
         slug
         createdAt
+        minRead
       }
     }   
   `;
@@ -250,6 +257,7 @@ export const getRecentPosts = async () => {
         }
         createdAt
         slug
+        minRead
       }
     }
   `;

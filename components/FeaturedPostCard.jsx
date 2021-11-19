@@ -17,6 +17,12 @@ const FeaturedPostCard = ({ post }) => (
       <p className="text-white mb-4 text-shadow font-semibold text-2xl text-center">
         {post.title}
       </p>
+      {post.minRead ? (
+        <p className="text-white mb-4 text-shadow text-center">
+          {post.minRead}
+        </p>
+      ) : null}
+
       <div className="flex items-center absolute bottom-5 w-full justify-center">
         <Image
           unoptimized
