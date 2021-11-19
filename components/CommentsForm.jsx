@@ -5,9 +5,9 @@ const CommentsForm = ({ slug }) => {
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [formData, setFormData] = useState({
-    name: null,
-    email: null,
-    comment: null,
+    name: '',
+    email: '',
+    comment: '',
     storeData: false,
   });
 
@@ -53,14 +53,15 @@ const CommentsForm = ({ slug }) => {
       localStorage.setItem('name', name);
       localStorage.setItem('email', email);
     } else {
-      localStorage.removeItem('name', name);
-      localStorage.removeItem('email', email);
+      localStorage.removeItem('name');
+      localStorage.removeItem('email');
     }
 
     submitComment(commentObj).then((res) => {
       if (res.createComment) {
         if (!storeData) {
-          (formData.name = ''), (formData.email = '');
+          formData.name = '';
+          formData.email = '';
         }
         formData.comment = '';
         setFormData((prevState) => ({
