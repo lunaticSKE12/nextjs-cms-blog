@@ -95,13 +95,11 @@ export const getPostPreviewDetails = async (slug) => {
     query GetPostDetails($slug: String!) {
       post(where: { slug: $slug }, stage: DRAFT) {
         title
-        excerpt
         featuredImage {
           url
         }
         author {
           name
-          bio
           photo {
             url
           }
@@ -110,10 +108,6 @@ export const getPostPreviewDetails = async (slug) => {
         slug
         content {
           raw
-        }
-        categories {
-          name
-          slug
         }
         minRead
       }
